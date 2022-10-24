@@ -1,0 +1,14 @@
+version: '3.6'
+
+services:
+  svr:
+    image: ubuntu:workstation
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      TZ: "${TZ:-Asia/Singapore}"
+    tty: true
+    restart: always
+    volumes:
+      - ./files:/files
